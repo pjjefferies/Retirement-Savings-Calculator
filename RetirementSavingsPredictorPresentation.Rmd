@@ -1,0 +1,67 @@
+---
+title       : 
+subtitle    : 
+author      : 
+job         : 
+framework   : html5slides # {io2012, html5slides, shower, dzslides, ...}
+highlighter : prettify  # {highlight.js, prettify, highlight}
+hitheme     : tomorrow      # 
+widgets     : []            # {mathjax, quiz, bootstrap}
+mode        : selfcontained # {standalone, draft}
+knit        : slidify::knit2slides
+---
+### Coursera Developing Data Products - Week 4 Project
+## Time to Retirement Predictor
+
+### by Paul Jefferies
+
+--- .class #id 
+
+## Are you tired of having to work and want get the point where you can choose to work or not...
+
+
+## Would you like to have this choice in 7 years, 1 month and 20 days?
+
+--- .class #id 
+
+## Now you can decide when you get to make that choice based on your lifestyle choices now
+
+```{r retirement graph, echo=FALSE, eval=TRUE, cache=TRUE}
+retirement = data.frame(
+    rate=c(seq.int(from=5, to=100, by=5)),
+    WYears=c(65.76, 51.35, 42.83, 36.72, 31.93, 27.98, 24.6, 21.64,
+             19.01, 16.62, 14.43, 12.42, 10.54, 8.79, 7.14, 5.57,
+             4.08,  2.66,  1.3,   0))
+barColor=c("Black", "Black","Black","Black","Black","Black","Black",
+           "Black", "Black", "Blue", "Black","Black","Black","Black",
+           "Black","Black", "Black","Black","Black","Black")
+barColor = as.character(barColor)
+
+barplot(retirement$WYears,
+                names.arg=retirement$rate,
+                col=barColor,
+                main="Years to Reirement Based on Percent of Income Savings Rate",
+                xlab="Savings Rate (Percent of Income",
+                ylab="Years To Retirement")
+
+```
+
+--- .class #id 
+
+## What are you waiting for?
+
+Just follow the link and choose your destiny
+
+<a href="https://pjefferies.shinyapps.io/retirementyearsbysavingsrate/">My Shiny - 'Time to Retirement' Application</a>
+
+
+
+--- .class #id 
+
+## References
+
+<a href="https://networthify.com/calculator/earlyretirement">"Networthify - When can I retire?"</a>
+
+<a href="http://www.mrmoneymustache.com/2012/01/13/the-shockingly-simple-math-behind-early-retirement/">Mr. Money Mustache - The Shockingly Simple Math Behind Early Retirement</a>
+
+<a href='https://vimeo.com/183016901'>Mr. Money Mustache Explaining this Concept at WDS</a>
